@@ -1,0 +1,81 @@
+---
+title: "Lara's Work"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Load Packages**
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(tidyverse)
+library(pdftools)
+library(readr)
+library(stringr)
+library(ggthemes)
+library(shiny)
+library(shinyBS)
+library(RColorBrewer)
+library(shinydashboard)
+library(sp)
+library(rgeos)
+library(rgdal)
+library(maptools)
+library(leaflet)
+library(scales)
+library(maps)
+library(gridExtra)
+library(grid)
+```
+
+#### Data Cleaning: Conflict Data
+```{r}
+AZ_Conflict <- read.csv("Conflict Data AZ (ACLED).csv", header = TRUE, stringsAsFactors = FALSE)
+Iran_Conflict <- read.csv("Conflict Data Iran (ACLED).csv", header = TRUE, stringsAsFactors = FALSE)
+Armenia_Conflict <- read.csv("Conflict Data Armenia (ACLED).csv", header = TRUE, stringsAsFactors = FALSE)
+Russia_Conflict <- read.csv("Conflict Data Russia (ACLED).csv", header = TRUE, stringsAsFactors = FALSE)
+Turkey_Conflict <- read.csv("Conflict Data Turkey (ACLED).csv", header = TRUE, stringsAsFactors = FALSE)
+Georgia_Conflict <- read.csv("Conflict Data Georgia (ACLED).csv", header = TRUE, stringsAsFactors = FALSE)
+```
+
+#### Data Cleaning: Health Data
+```{r}
+AZ_Health <- read.csv("Total Health Data AZ.csv", header = TRUE, stringsAsFactors = FALSE)
+Iran_Health <- read.csv("Total Health Data Iran.csv", header = TRUE, stringsAsFactors = FALSE)
+Armenia_Health <- read.csv("Total Health Data Armenia.csv", header = TRUE, stringsAsFactors = FALSE)
+Russia_Health <- read.csv("Total Health Data Russia.csv", header = TRUE, stringsAsFactors = FALSE)
+Turkey_Health <- read.csv("Total Health Data Turkey.csv", header = TRUE, stringsAsFactors = FALSE)
+Georgia_Health <- read.csv("Total Health Data Georgia.csv", header = TRUE, stringsAsFactors = FALSE)
+View(Armenia_Health)
+```
+
+#### Data Cleaning: Disaster Data
+```{r}
+AZ_Diasaster <- read.csv("Disaster Data AZ.csv", header = TRUE, stringsAsFactors = FALSE)
+Iran_Diasaster <- read.csv("Disaster Data Iran.csv", header = TRUE, stringsAsFactors = FALSE)
+Russia_Diasaster <- read.csv("Disaster Data Russia.csv", header = TRUE, stringsAsFactors = FALSE)
+Turkey_Diasaster <- read.csv("Disaster Data Turkey.csv", header = TRUE, stringsAsFactors = FALSE)
+Georgia_Diasaster <- read.csv("Disaster Data Georgia.csv", header = TRUE, stringsAsFactors = FALSE)
+View(AZ_Diasaster)
+```
+
+#### Data Cleaning: Displacement Data
+```{r}
+AZ_Displaced <- read.csv("Displacement Data AZ.csv", header = TRUE, stringsAsFactors = FALSE)
+Iran_Displaced <- read.csv("Displacement Data Iran.csv", header = TRUE, stringsAsFactors = FALSE)
+Armenia_Displaced <- read.csv("Displacement Data Armenia.csv", header = TRUE, stringsAsFactors = FALSE)
+Russia_Displaced <- read.csv("Displacement Data Russia.csv", header = TRUE, stringsAsFactors = FALSE)
+Turkey_Displaced <- read.csv("Displacement Data Turkey.csv", header = TRUE, stringsAsFactors = FALSE)
+Georgia_Displaced <- read.csv("Displacement Data Georgia.csv", header = TRUE, stringsAsFactors = FALSE)
+View(Armenia_Displaced)
+```
+
+#### Data Cleaning: Aid Worker KKA
+```{r}
+KKA_Old <- read.csv("2015-2018 Aid Worker KKA.csv", header = TRUE, stringsAsFactors = FALSE)
+KKA_2019 <- read.csv("2019 Aid Worker KKA.csv", header = TRUE, stringsAsFactors = FALSE)
+KKA_2020 <- read.csv("2020 Aid Worker KKA.csv", header = TRUE, stringsAsFactors = FALSE)
+View(KKA_2020)
+```
